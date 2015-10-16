@@ -15,12 +15,11 @@
 </head>
 <body class="<%= body_class %>">
   <%= nav_bar %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= render "flashes" -%>
   <div class="container">
+    <%= render "flashes" -%>
     <%= yield %>
   </div>
   <%= render "javascript" %>
+  <% console %>
 </body>
 </html>
