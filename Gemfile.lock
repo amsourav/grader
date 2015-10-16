@@ -298,6 +298,7 @@ DEPENDENCIES
   rack-canonical-host
   rack-timeout
   rails (~> 4.2.0)
+  rake
   recipient_interceptor
   rspec-rails (~> 3.3.0)
   sass-rails (~> 5.0)
