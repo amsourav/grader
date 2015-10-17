@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      redirect_to @course, notice: 'Course was successfully created.'
+      redirect_to courses_url, notice: 'Course was successfully created.'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   def update
     if @course.update(course_params)
-      redirect_to @course, notice: 'Course was successfully updated.'
+      redirect_to courses_url, notice: 'Course was successfully updated.'
     else
       render :edit
     end

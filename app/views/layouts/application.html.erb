@@ -11,6 +11,7 @@
   %>
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
+  <%= render "javascript" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
@@ -36,7 +37,6 @@
     <%= render "flashes" -%>
     <%= yield %>
   </div>
-  <%= render "javascript" %>
   <% console %>
 </body>
 </html>

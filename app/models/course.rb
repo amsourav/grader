@@ -14,5 +14,5 @@
 
 class Course < ActiveRecord::Base
   belongs_to :teacher
-  has_many :exams
+  has_many :exams, :dependent => :destroy
 end

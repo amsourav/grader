@@ -1,11 +1,10 @@
 class ExamsController < ApplicationController
   before_action :authenticate_teacher!
-  before_action :load_course
+  before_filter :load_course
 
   # GET /exams
   def index
-    course = Course.find(params[:course_id])
-    @exams = course.exams.all
+    @exams = @course.exams.all
   end
 
   # GET /exams/1
@@ -28,7 +27,7 @@ class ExamsController < ApplicationController
     @exam = @course.exams.new(exam_params)
 
     if @exam.save
-      redirect_to [@course, @exam], notice: 'Exam was successfully created.'
+      redirect_to course_exams_path, notice: 'Exam was successfully created.'
     else
       render :new
     end
@@ -38,6 +37,7 @@ class ExamsController < ApplicationController
   def update
     @exam = @course.exams.find(params[:id])
     if @exam.update(exam_params)
+      @exam.update_attributes(course_id: @course.id)
       redirect_to course_exams_path, notice: 'Exam was successfully updated.'
     else
       render :edit
