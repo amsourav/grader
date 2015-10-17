@@ -15,4 +15,9 @@
 class Course < ActiveRecord::Base
   belongs_to :teacher
   has_many :exams, :dependent => :destroy
+  validates :code, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
+  validates :year, presence: true
+  validates :semester, presence: true
+  validates :teacher_id, presence: true
 end

@@ -12,4 +12,7 @@
 
 class Exam < ActiveRecord::Base
   belongs_to :course
+  validates :name, presence: true
+  validates :date, presence: true
+  validates :course_id, presence: true
 end
