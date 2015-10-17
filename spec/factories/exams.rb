@@ -1,18 +1,20 @@
 # == Schema Information
 #
-# Table name: courses
+# Table name: exams
 #
 #  id         :integer          not null, primary key
-#  code       :string
 #  name       :string
-#  year       :string
-#  semester   :string
-#  teacher_id :integer
+#  date       :datetime
+#  course_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Course < ActiveRecord::Base
-  belongs_to :teacher
-  has_many :exams
+FactoryGirl.define do
+  factory :exam do
+    name "MyString"
+date "2015-10-17 14:37:14"
+course_id 1
+  end
+
 end

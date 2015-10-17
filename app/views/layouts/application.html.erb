@@ -14,7 +14,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
-  <%= nav_bar %>
+  <% if teacher_signed_in? %>
+    <%= nav_bar brand: "IITG Grader", brand_link: root_url do %>
+      <%= menu_group do %>
+        <%= menu_item "Courses", courses_url %>
+        <%= menu_item "Exams", "#" %>
+      <% end %>
+      <%= menu_group pull: :right do %>
+        <%= menu_item "Sign Out!", destroy_teacher_session_path, method: :delete %>
+      <% end %>
+    <% end %>
+  <% elsif %>
+    <%= nav_bar brand: "IITG Grader", brand_link: root_url do %>
+      <%= menu_group pull: :right do %>
+        <%= menu_item "Login", new_teacher_session_path %>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <div class="container">
     <%= render "flashes" -%>
     <%= yield %>

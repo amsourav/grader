@@ -1,18 +1,17 @@
 # == Schema Information
 #
-# Table name: courses
+# Table name: exams
 #
 #  id         :integer          not null, primary key
-#  code       :string
 #  name       :string
-#  year       :string
-#  semester   :string
-#  teacher_id :integer
+#  date       :datetime
+#  course_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Course < ActiveRecord::Base
-  belongs_to :teacher
-  has_many :exams
+require 'rails_helper'
+
+RSpec.describe Exam, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
