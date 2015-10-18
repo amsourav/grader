@@ -24,11 +24,14 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
+gem "unicorn"
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
+  gem "rails-erd"
 end
 
 group :development, :test do

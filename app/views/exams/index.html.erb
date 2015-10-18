@@ -5,7 +5,9 @@
     <tr>
       <th>Name</th>
       <th>Date</th>
-      <th colspan="2"></th>
+      <th># Questions</th>
+      <th>Total Marks</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -14,6 +16,8 @@
       <tr>
         <td><%= exam.name %></td>
         <td><%= exam.date %></td>
+        <td><%= exam.tot_ques %></td>
+        <td><%= exam.tot_marks %></td>
         <td><%= link_to 'Show', course_exam_path(@course, exam) %></td>
         <td><%= link_to 'Edit', edit_course_exam_path(@course, exam) %></td>
         <%# link_to 'Destroy', [@course, exam], method: :delete, data: { confirm: 'Are you sure?' }%>

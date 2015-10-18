@@ -8,5 +8,15 @@
   <%= @exam.date %>
 </p>
 
+<p>
+  <strong>No. of Questions:</strong>
+  <%= @exam.tot_ques %>
+</p>
+
+<p>
+  <strong>Marks:</strong>
+  <%= @exam.tot_marks %>
+</p>
+
 <%= link_to 'Edit', edit_course_exam_path(@course, @exam) %> |
 <%= link_to 'Back', course_exams_path %>

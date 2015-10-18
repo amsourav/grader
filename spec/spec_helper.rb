@@ -7,6 +7,7 @@ require "webmock/rspec"
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include Devise::TestHelpers, type: :controller
   config.expect_with :rspec do |expectations|
     expectations.syntax = :expect
   end
