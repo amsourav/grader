@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20151018085535) do
   end
 
   create_table "qpaperspecs", force: :cascade do |t|
-    t.string   "qname"
+    t.text     "qname"
     t.integer  "exam_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
