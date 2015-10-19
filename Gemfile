@@ -6,6 +6,7 @@ gem "carrierwave"
 gem "annotate"
 gem "twitter-bootstrap-rails"
 gem "devise"
+gem "mathjax-rails"
 
 gem "autoprefixer-rails"
 gem "coffee-rails", "~> 4.1.0"

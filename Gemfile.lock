@@ -137,6 +137,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mathjax-rails (2.5.1)
+      railties (>= 3.0)
     method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
@@ -308,6 +310,7 @@ DEPENDENCIES
   i18n-tasks
   jquery-rails
   launchy
+  mathjax-rails
   normalize-rails (~> 3.0.0)
   pg
   pry-rails
