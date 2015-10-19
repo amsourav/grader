@@ -1,11 +1,23 @@
 <%= simple_form_for([@course, @exam]) do |f| %>
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :date %>
-    <%= f.input :tot_ques %>
-    <%= f.input :tot_marks %>
-    <%= f.hidden_field :course_id, :value => :course_id %>
-  </div>
+    <div class="row">
+        <div class="col-md-6">
+          <%= f.input :name %>
+          <%= f.input :date %>
+          <%= f.input :tot_ques %>
+          <%= f.input :tot_marks %>
+          <%= f.hidden_field :course_id, :value => :course_id %>
+        </div>
+        <div class="col-md-6">
+          <% i=1 %>
+          <%= f.simple_fields_for :qpaperspecs do |p| %>
+            <%= p.input :qname, label: "Question #{i}" %>
+            <%= p.hidden_field :exam_id, :value => params[:exam_id] %>
+          <% i=i+1 %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
   <div class="form-actions">
     <%= f.button :submit %>

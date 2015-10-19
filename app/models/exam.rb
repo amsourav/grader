@@ -14,9 +14,12 @@
 
 class Exam < ActiveRecord::Base
   belongs_to :course
+  has_many :qpaperspecs
+  accepts_nested_attributes_for :qpaperspecs
+  
   validates :name, presence: true
   validates :date, presence: true
   validates :course_id, presence: true
   validates :tot_ques, presence: true, numericality: {greater_than_or_equal_to: 1}
-  validates :tot_marks, presence: true, numericality: {greater_than_or_equal_to: 1} 
+  validates :tot_marks, presence: true, numericality: {greater_than_or_equal_to: 1}
 end

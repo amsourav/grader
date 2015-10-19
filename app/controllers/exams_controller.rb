@@ -5,16 +5,19 @@ class ExamsController < ApplicationController
   # GET /exams
   def index
     @exams = @course.exams.all
+
   end
 
   # GET /exams/1
   def show
     @exam = @course.exams.find(params[:id])
+    @questions = @exam.qpaperspecs
   end
 
   # GET /exams/new
   def new
     @exam = @course.exams.new
+    5.times {@exam.qpaperspecs.build}
   end
 
   # GET /exams/1/edit
@@ -63,6 +66,6 @@ class ExamsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def exam_params
-      params.require(:exam).permit(:name, :date, :course_id, :tot_ques, :tot_marks)
+      params.require(:exam).permit(:name, :date, :course_id, :tot_ques, :tot_marks, qpaperspecs_attributes: [:id, :qname, :exam_id])
     end
 end
