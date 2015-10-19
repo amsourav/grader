@@ -1,7 +1,7 @@
 
 <div class="row">
 
-  <div class="well well-lg col-md-5">
+  <div class="well col-md-5">
     <p>
       <strong>Name:</strong>
       <%= @exam.name %>
@@ -20,15 +20,20 @@
     </p>
   </div>
 
+<div class="col-md-offset-1 col-md-6">
+  <% i = 1 %>
   <% @questions.each do |question| %>
-    <div class="well col-md-offset-1 col-md-6">
-      <p>
-        <strong><%= question.qname %> </strong>
-      </p>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= "Question #{i}" %></div>
+      <div class="panel-body"><%= question.qname %> </div>
     </div>
+  <% i = i+1 %>
   <% end %>
+</div>
+
 
 </div>
 
 <%= link_to 'Edit', edit_course_exam_path(@course, @exam) %> |
-<%= link_to 'Back', course_exams_path %>
+<%= link_to 'Back', course_exams_path %> |
+<%= link_to 'Destroy', '#', method: :delete, data: { confirm: 'Are you sure?' }%>

@@ -17,7 +17,7 @@ class ExamsController < ApplicationController
   # GET /exams/new
   def new
     @exam = @course.exams.new
-    5.times {@exam.qpaperspecs.build}
+    3.times {@exam.qpaperspecs.build}
   end
 
   # GET /exams/1/edit
@@ -28,7 +28,6 @@ class ExamsController < ApplicationController
   # POST /exams
   def create
     @exam = @course.exams.new(exam_params)
-
     if @exam.save
       redirect_to course_exams_path, notice: 'Exam was successfully created.'
     else
