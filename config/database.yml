@@ -20,6 +20,10 @@ production: &deploy
   min_messages: warning
   pool: <%= [Integer(ENV.fetch("MAX_THREADS", 5)), Integer(ENV.fetch("DB_POOL", 5))].max %>
   timeout: 5000
-  url:  <%= ENV.fetch("DATABASE_URL", "") %>
+  database: d423rdcfh5adt7
+  host: ec2-54-204-6-113.compute-1.amazonaws.com
+  port: 5432
+  username: ftarzigtnbfrxf
+  password: Qnmu_xJxf4Upf5TDlKmYMP-aG1
 
 staging: *deploy
