@@ -7,6 +7,7 @@ gem "annotate"
 gem "twitter-bootstrap-rails"
 gem "devise"
 gem "mathjax-rails"
+gem "therubyracer"
 
 gem "autoprefixer-rails"
 gem "coffee-rails", "~> 4.1.0"
