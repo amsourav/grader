@@ -11,13 +11,13 @@ class ExamsController < ApplicationController
   # GET /exams/1
   def show
     @exam = @course.exams.find(params[:id])
-    @questions = @exam.qpaperspecs
+    @questions = @exam.qpaperspecs.order(:created_at)
   end
 
   # GET /exams/new
   def new
     @exam = @course.exams.new
-    5.times {@exam.qpaperspecs.build}
+    3.times {@exam.qpaperspecs.build}
   end
 
   # GET /exams/1/edit
@@ -28,7 +28,6 @@ class ExamsController < ApplicationController
   # POST /exams
   def create
     @exam = @course.exams.new(exam_params)
-
     if @exam.save
       redirect_to course_exams_path, notice: 'Exam was successfully created.'
     else
@@ -40,7 +39,6 @@ class ExamsController < ApplicationController
   def update
     @exam = @course.exams.find(params[:id])
     if @exam.update(exam_params)
-      @exam.update_attributes(course_id: @course.id)
       redirect_to course_exams_path, notice: 'Exam was successfully updated.'
     else
       render :edit

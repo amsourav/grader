@@ -10,8 +10,6 @@
     https://github.com/calebthompson/title#usage
   %>
   <title><%= title %></title>
-  <%= stylesheet_link_tag :application, media: "all" %>
-  <%= render "javascript" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
@@ -31,11 +29,12 @@
       <% end %>
     <% end %>
   <% end %>
-
   <div class="container">
     <%= render "flashes" -%>
     <%= yield %>
   </div>
-  <% console %>
+    <% console %>
 </body>
+<%= stylesheet_link_tag :application, media: "all" %>
+<%= render "javascript" %>
 </html>
